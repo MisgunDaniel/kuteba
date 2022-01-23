@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>KUTEBA</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    <body>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="data:image/jpeg;base64,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" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    KUTEBA
+                </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left:700px;">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link" href="#">Features</a>
+                  <a class="nav-link" href="#">Pricing</a>
+                  <a class="nav-link disabled">Disabled</a>
+                </div>
+              </div>
+            </div>
+        </nav>
+
+        <!--card-->
+        <div class="card shadow" style="width:1200px; margin-left:50px;margin-top:100px;" >
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <!--First Accordion-->
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Income / ገቢ 
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Net Salary / ወርሃዊ ደሞዝ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Bonus / ጉርሻ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Saving / ቁጠባ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Pension / ጡረታ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Other / ሌላ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Home and Utilities / ቤት እና የቤት መገልገያ
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Rent / ቤት ኪራይ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Electricity / መብራት</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Water / ውሃ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Internet / ኢንተርኔት</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Mobile / ሞባይል</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Pay TV / የክፍያ ቲቪ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Groceries / አስቤዛ 
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Bread / ዳቦ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Meat / ስጋ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Fruits and Veg. / አትክልትና ፍራፍሬ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Other / ሌላ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!--Second Accordion-->
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                  Transport / ትራንስፖርት
+                                </button>
+                              </h2>
+                              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Bus & Taxi / አውቶቡስ እና ታክሲ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Petrol / ነዳጅ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Fines / ቅጣት</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Parking / ፓርኪንግ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Repair & Maintenance / ጥገና እና ሰርቪስ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Other / ሌላ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                  Medical and Cosmetics / ህክምና እና ውበት
+                                </button>
+                              </h2>
+                              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Beauty Salon / ጸጉር</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Medicine / መድሃኒት</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Doctor's Visit / ክሊኒክ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Clothing & Shoe / ልብስ እና ጫማ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Jewellery / ጌጣጌጥ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Gym / ጂምኔዚየም</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                  Childeren / ልጆች 
+                                </button>
+                              </h2>
+                              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Baby Products / የልጆች ዕቃ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Toys / አሻንጉሊቶች</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">School Fee / የትምህርት ቤት ክፍያ</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">School Uniform / የትምህርት ቤት ዩኒፎርም</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Other school needs / ሌሎች የትምህርት ቤት ዕቃዎች</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label for="staticEmail" class="col-sm-5 col-form-label">Other / ሌሎች</label>
+                                        <div class="col-sm-3">
+                                          <input type="number" class="form-control">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="form-control">
+                                                <option value="1">Weekly/በሳምንት</option>
+                                                <option value="2">Monthly/በወር</option>
+                                                <option value="3">Annually/በዓመት</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:50px;">
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                              <strong><h3>Total / ጠቅላላ </h3></strong>
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body">
+                                <div class="mb-3 row">
+                                    <label for="staticEmail" class="col-sm-5 col-form-label">Total / ድምር</label>
+                                    <div class="col-sm-3">
+                                      <input type="text" readonly class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="" async defer></script>
+    </body>
+</html>
