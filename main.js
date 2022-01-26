@@ -1,5 +1,5 @@
 
-
+//home section rent part
 var rent = document.getElementById("rent").value;
 var rentSelect = document.getElementById("homeSelect").value;
 
